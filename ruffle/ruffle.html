@@ -6,7 +6,10 @@
     </head>
     <body>
         <script>
-            function getQueryVariable(variable) {
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+            
+			function getQueryVariable(variable) {
               var vars = window.location.search.substring(1).split('&');
               for (var i = 0; i < vars.length; i++) {
                 var pair = vars[i].split('=');
@@ -25,8 +28,15 @@
                 const player = ruffle.createPlayer();
                 const container = document.getElementById("container");
                 container.appendChild(player);
-                player.load(game);
             });
+
+			player.style.width = w;
+			player.style.height = h;
+
+			player.load({
+				url: game,
+				allowScriptAccess: false,
+			});
         </script>
     </body>
 </html>

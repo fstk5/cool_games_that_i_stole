@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>fstk5's games -- ruffle</title>
-        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+		<script></script>
     </head>
     <body>
-        <script>
+        <script src="/ruffle/ruffle-nightly-2024_05_22-web-selfhosted/ruffle.js">
 			var w = window.innerWidth;
 			var h = window.innerHeight;
             
@@ -29,6 +29,11 @@
                 const container = document.getElementById("container");
                 container.appendChild(player);
             });
+
+			window.RufflePlayer = window.RufflePlayer || {};
+			window.RufflePlayer.config = {
+				"publicpath": undefined,
+			}
 
 			player.load({
 				url: game,

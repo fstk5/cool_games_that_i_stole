@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>fstk5's games -- ruffle</title>
+        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    </head>
+    <body>
+        <script>
+            function getQueryVariable(variable) {
+              var vars = window.location.search.substring(1).split('&');
+              for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable) {
+                  return pair[1];
+                }
+              }
+              return undefined;
+            }
+          
+            var game = getQueryVariable("game");
+            
+            window.RufflePlayer = window.RufflePlayer || {};
+            window.addEventListener("load", (event) => {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+                const container = document.getElementById("container");
+                container.appendChild(player);
+                player.load(game);
+            });
+        </script>
+    </body>
+</html>

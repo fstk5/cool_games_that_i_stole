@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<title>fstk5's games -- ruffle</title>
+    <script src="/ruffle/ruffle-nightly-2024_05_22-web-selfhosted/ruffle.js"></script>
 	</head>
 
     <body>
-		<div id="container"></div>
-        <script src="/ruffle/ruffle-nightly-2024_05_22-web-selfhosted/ruffle.js">
+        <script>
 			var w = window.innerWidth;
 			var h = window.innerHeight;
             
@@ -22,26 +22,7 @@
             }
           
             var game = getQueryVariable("game");
-            
-            window.RufflePlayer = window.RufflePlayer || {};
-            window.addEventListener("load", (event) => {
-                const ruffle = window.RufflePlayer.newest();
-                const player = ruffle.createPlayer();
-                const container = document.getElementById("container");
-                container.appendChild(player);
-            });
-
-			window.RufflePlayer = window.RufflePlayer || {};
-			window.RufflePlayer.config = {
-				"publicpath": undefined,
-			}
-
-			player.load({
-				url: game,
-				allowScriptAccess: false,
-				width: w,
-				height: h,
-			});
         </script>
+        <embed src=gamestyle style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
     </body>
 </html>

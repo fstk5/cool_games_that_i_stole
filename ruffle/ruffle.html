@@ -7,11 +7,22 @@
 
     <body>
         <script>
+			function getQueryVariable(variable) {
+              var vars = window.location.search.substring(1).split('&');
+              for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (pair[0] == variable) {
+                  return pair[1];
+                }
+              }
+              return undefined;
+            }
+          
             var game = getQueryVariable("game");
         </script>
-        <!-- <embed src=game style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"> -->
-			<script>
-				document.write("<b>" + game + "</b>")
-			</script>
-		</body>
+        <script>		
+			document.write("<b>" + game + "</b>")
+		</script>
+		<!-- <embed src=game style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"> -->
+    </body>
 </html>

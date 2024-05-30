@@ -7,6 +7,9 @@
 
     <body>
         <script>
+			var w = browser.innerWidth;
+			var h = browser.innerHeight;
+
 			function getQueryVariable(variable) {
               var vars = window.location.search.substring(1).split('&');
               for (var i = 0; i < vars.length; i++) {
@@ -20,6 +23,6 @@
           
             var game = getQueryVariable("game");
         </script>
-		<embed src=game style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
+		<script id = "gabe">swfobject.embedSWF("../ruffle-example/flashfiles/1on1soccer.swf", 'ruffle', 800, 600);</script>
     </body>
 </html>
